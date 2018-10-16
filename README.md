@@ -8,4 +8,4 @@
 + [LinkedIn](https://www.linkedin.com/in/thejohncotton/)
 + [Website](http://johncotton.us)
 
-![](../jcdevprof.jpg)
+![](jcdevprof.jpg)
