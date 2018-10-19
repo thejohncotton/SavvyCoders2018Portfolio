@@ -1,0 +1,132 @@
+html {
+    box-sizing: border-box; 
+}
+body {
+    width: 80%;
+    background-color: lightgray;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+}
+
+h1 {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2em;
+}
+
+h2 {
+    font-family: monospace;
+    font-size: 1.5em;
+
+}
+
+p {
+    font-size: 16px;
+}   
+ 
+div {
+    margin-bottom: 50px;
+}
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+.content-area {
+    text-align: left;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+.footer {
+    background-color: #000;
+    color: #fff;
+}
+.footer a {
+    color: orange;
+}
+a:visited {
+    color: green;
+}
+.highlighted {
+    background-color: #ffff00;
+}
+
+li {
+    margin-right: 20px;list-style: none;
+    }
+
+ul {
+display: flex;
+flex-direction: row;
+}
+
+
+    body {
+        width: 90%;
+        background-color:thistle;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    h1 {
+        font-family: monospace;
+        color: yellow;
+        text-align: center;
+    }
+    a {
+        color: tomato;
+    }
+    h2 {
+        font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+    li {
+        font-family: verdana;
+        list-style: none;
+    }
+    #profile-photo {
+      display: flex;
+      align-content: center;
+      width: 250px;
+      align-content: center;
+      margin-left: auto;
+      margin-right: auto;
+      /* border:steelblue 2px dashed; */
+      border-radius:50%;
+    }
+
+    /* From home page */
+
+
+    body {
+        width: 90%;
+        background-color:thistle;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    h1 {
+        font-family: monospace;
+        color: yellow;
+        text-align: center;
+    }
+    a {
+        color: tomato;
+    }
+    h2 {
+        font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+    li {
+        font-family: verdana;
+        list-style: none;
+    }
+    #profile-photo {
+      display: flex;
+      align-content: center;
+      width: 250px;
+      align-content: center;
+      margin-left: auto;
+      margin-right: auto;
+      /* border:steelblue 2px dashed; */
+      border-radius:50%;
+    }
