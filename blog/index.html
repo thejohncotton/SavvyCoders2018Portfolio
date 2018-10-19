@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    html {
+        box-sizing: border-box;
+    }
+    body {
+        width: 80%;
+        background-color: lightgray;
+        margin-left: 10%;
+        margin-right: 10%;
+        text-align: center;
+    }
+   
+    h1 {
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 2em;
+    }
+
+    h2 {
+        font-family: monospace;
+        font-size: 1.5em;
+
+    }
+
+    p {
+        font-size: 16px;
+    }   
+     
+    div {
+        margin-bottom: 50px;
+    }
+    .container {
+        max-width: 960px;
+        margin: 0 auto;
+    }
+    .content-area {
+        text-align: left;
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+    .footer {
+        background-color: #000;
+        color: #fff;
+    }
+    .highlighted {
+        background-color: #ffff00;
+    }
+
+    li {
+        margin-right: 20px;list-style: none;
+        }
+
+    ul {
+    display: flex;
+    flex-direction: row;
+    }
+    </style>
+</head>
+<body>
+    <div class="container navigation" id="blog-navigation">
+        <ul>
+            <li><a href="../">Home</a></li>
+            <li><a href="../projects">Projects</a></li>
+            <li>Blog</li>
+        </ul>
+    </div>
+    <div class="container header" id="blog-header">
+        <h1>John's Blog</h1>
+        <h3>Just another blog</h3>
+    </div>
+    <div class="container content-area" id="blog-content-area">
+        <h2>Blog Title</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit nemo cumque at quaerat, <span class="highlighted">consequatur voluptate?</span></p>
+    </div>
+    <div class="container footer" id="blog-footer">
+        <ul>
+            <li><a href="mailto:john@johncotton.us">Email Me!</a></li>
+            <li><a href="https://twitter.com">Twitter</a></li>
+        </ul>
+        <p>copyright 2018 John Cotton All Rights Reserved</p>
+    </div>
+</body>
+</html>
