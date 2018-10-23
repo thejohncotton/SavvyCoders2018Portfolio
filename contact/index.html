@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>John Cotton | Blog</title>
+    <link type="text/css" rel="stylesheet" href="../css/style.css"/>
+</head>
+<body>
+    <div class="container navigation" id="contact-navigation">
+        <ul>
+            <li><a href="../">Home</a></li>
+            <li><a href="../projects">Projects</a></li>
+            <li><a href="../blog">Blog</a></li>
+            <li>Contact</li>
+        </ul>
+    </div>
+    <div class="container content-area"id="contact-content">
+            <!--
+  The action attribute defines where on the server the form data should be sent
+  The method attribute specifies the HTTP method (GET or POST)
+-->
+
+    <form action="//formspree.io/john@johncotton.us" method="POST" class="form">
+
+        <input type="text" name="firstname" placeholder="First Name" autofocus required><br>
+        <input type="text" name="lastname" placeholder="Last Name" required><br>
+        <input type="email" name="userEmail" placeholder="email@example.com"><br>
+    
+        <label>What's this message about?<br>
+        <input type="radio" name="subject" value="professional" ><span>I'd like to hire you!</span><br>
+        <input type="radio" name="subject" value="personal" ><span>Personal message</span><br>
+        <input type="radio" name="subject" value="other" ><span>Don't know/something else</span><br>
+        </label>
+    
+        <label for="marketing">How did you hear about me?</label><br>
+        <select name="marketing">
+        <optgroup label="Online">
+            <option value="social">Social Media (FB, Twitter, LinkedIn)</option>
+            <option value="github">Online Portfolio (GitHub)</option>
+            <option value="search">Search Engine</option>
+            <option value="email">Email</option>
+        </optgroup>
+        <optgroup label="In-Person">
+            <option value="networking">We met at a networking event</option>
+            <option value="referral">Personal referral</option>
+            <option value="random">We met somewhere else</option>
+        </optgroup>
+        <option value="other">Other</option>
+        </select><br>
+    
+        <textarea name="user_message" ></textarea><br>
+        <input type="submit" id="form-submit">
+    </form>
+    </div>
+    <div class="container footer" id="contact-footer">
+        <ul>
+            <li><a href="mailto:john@johncotton.us">Email Me!</a></li>
+            <li><a href="https://twitter.com">Twitter</a></li>
+        </ul>
+        <p>copyright 2018 John Cotton All Rights Reserved</p>
+    </div>
+
+</body>
+</html>

@@ -130,3 +130,18 @@ flex-direction: row;
       /* border:steelblue 2px dashed; */
       border-radius:50%;
     }
+    /* form styles */
+    form {
+        margin-bottom: 50px;
+        align-content: center;
+    }
+    form input {
+        display: flex;
+        width: 60%;
+        align-content: center;
+    }
+    input[type="submit"]{
+        display: block;
+        text-align: center;
+    }
+   
