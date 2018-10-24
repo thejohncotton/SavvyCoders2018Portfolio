@@ -5,16 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>John Cotton | Blog</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto+Slab" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="../css/style.css"/>
 </head>
 <body>
-    <div class="container navigation" id="contact-navigation">
+    <div class="navigation" id="contact-navigation">
         <ul>
             <li><a href="../">Home</a></li>
             <li><a href="../projects">Projects</a></li>
             <li><a href="../blog">Blog</a></li>
             <li>Contact</li>
         </ul>
+    </div>
+    <div class="container header">
+        <h1>Contact:</h1>
     </div>
     <div class="container content-area"id="contact-content">
             <!--
@@ -29,12 +35,12 @@
         <input type="email" name="userEmail" placeholder="email@example.com"><br>
     
         <label>What's this message about?<br>
-        <input type="radio" name="subject" value="professional" ><span>I'd like to hire you!</span><br>
-        <input type="radio" name="subject" value="personal" ><span>Personal message</span><br>
-        <input type="radio" name="subject" value="other" ><span>Don't know/something else</span><br>
+        <input type="radio" name="subject" value="professional" ><label for="professional">I'd like to hire you!</label>
+        <input type="radio" name="subject" value="personal" ><label for="personal">Personal message</label>
+        <input type="radio" name="subject" value="other" ><label for="other">Don't know/something else</label><br>
         </label>
     
-        <label for="marketing">How did you hear about me?</label><br>
+        <label for="marketing">How did you hear about me?</label><br><br>
         <select name="marketing">
         <optgroup label="Online">
             <option value="social">Social Media (FB, Twitter, LinkedIn)</option>
@@ -54,12 +60,13 @@
         <input type="submit" id="form-submit">
     </form>
     </div>
-    <div class="container footer" id="contact-footer">
+    <div class="footer" id="contact-footer">
         <ul>
-            <li><a href="mailto:john@johncotton.us">Email Me!</a></li>
-            <li><a href="https://twitter.com">Twitter</a></li>
+                <li><a href="mailto:john@johncotton.us"><i class="fas fa-envelope"></i></a></li>
+                <li><a href="https://twitter.com/thejohncotton"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="https://github.com/thejohncotton"><i class="fab fa-github"></i></a></li>
         </ul>
-        <p>copyright 2018 John Cotton All Rights Reserved</p>
+        <p>&copy 2018 John Cotton All Rights Reserved</p>
     </div>
 
 </body>
