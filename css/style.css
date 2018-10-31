@@ -47,8 +47,8 @@ li {
 .content-area {
     grid-area: content-area;
     text-align: left;
-    margin-left: 25%;
-    margin-right: 25%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 .icons {
     text-align: center;
@@ -124,7 +124,7 @@ input[type="submit"]{
 }
    
 input[type="radio"]{
-    width: 1em;
+    width: .5em;
     padding: 10px;
     margin-top: .5em;
     margin-right: 1em;
@@ -141,6 +141,7 @@ textarea {
     border-radius: 5px;
     resize: none;
 }
+
 /* navigation styles */
 .navigation {
     grid-area: navigation;
@@ -185,7 +186,7 @@ textarea {
 }
 
 /* Large Screen layout adjustments */
-@media (min-width: 612px) {
+@media (min-width: 768px) {
     body {
       grid-template-columns: 10rem auto;
       grid-template-rows: min-content auto min-content;
@@ -208,5 +209,9 @@ textarea {
     }
     .header {
         margin-top: 0;
+    }
+    .content-area {
+        margin-left: 25%;
+        margin-right: 25%;
     }
   }

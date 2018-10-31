@@ -4,6 +4,8 @@
   "description": "![profile photo](https://media.licdn.com/dms/image/C5603AQGFPv_1wQbm9Q/profile-displayphoto-shrink_200_200/0?e=1545264000&v=beta&t=YJahIpva-5JfTeHe2oqLyUzBvbwJ_uan_mQmZiVRXyU)",
   "main": "index.js",
   "scripts": {
+    "build": "parcel build index.html && cp _redirects ./dist/",
+    "server": "npx parcel index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,6 +20,10 @@
   },
   "homepage": "https://github.com/thejohncotton/SavvyCoders2018Portfolio#readme",
   "devDependencies": {
+    "cssnano": "^4.1.7",
     "eslint": "^5.7.0"
+  },
+  "dependencies": {
+    "parcel": "^1.10.3"
   }
 }
