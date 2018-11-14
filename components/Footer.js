@@ -1,4 +1,5 @@
-export default `
+export default function(state){
+    return `
 <div class="footer">
         <ul>
                 <li><a href="mailto:john@johncotton.us"><i class="fas fa-envelope"></i></a></li>
@@ -8,3 +9,4 @@ export default `
         <p>&copy; 2018 John Cotton All Rights Reserved</p>
     </div>
 `
+}
