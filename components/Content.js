@@ -1,4 +1,4 @@
-import * as pages from "./Pages";
+import * as pages from "./pages";
 export default function(state) {
     if (state.content){
     return `${state.content}` 
