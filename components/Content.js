@@ -6,4 +6,4 @@ export default function(state) {
 <div class="container content-area">
 ${pages[state.body]}
     </div>
-` }
+` } 
