@@ -3,35 +3,19 @@ import Header from "~/components/Header"
 import Content from "~/components/Content"
 import Footer from "~/components/Footer"
 import Blog from "~/components/Blog"
+import * as states from "../store"
+import { lowerCase } from "lodash";
+import { capitalize } from "lodash";
+let state = states
+console.log(lowerCase('John'))
 
-var state = {
-    Home : {
-        title: "Welcome to John's Savvy Coders Portfolio",
-        links: [`home`,`projects`,`blog`,`contact`]
-    },
-    Blog : {
-        title: "Welcome to my blog!",
-        links: [`home`,`projects`,`blog`,`contact`],
-        content: Blog()
-
-        },
-    Projects : {
-        title: "Welcome to my projects page!",
-        links: [`home`,`projects`,`blog`,`contact`],
-    },
-    Contact : {
-        title: "Welcome to my Contact Page!",
-        links: [`home`,`projects`,`blog`,`contact`]
-        }
-}
 function handleNavigation(event) {
     // pull the component name from the text in the anchor tag
     var component = event.target.textContent;
     event.preventDefault();
     // select a piece of the state tree by component
-    render(state[component]);
+    render(state[capitalize(component)]);
   }
-
 
 var root = document.querySelector("#root"); // this doesn't need to be queried every time we re-render
 function render(state) {
@@ -41,13 +25,19 @@ function render(state) {
         ${Content(state)}
         ${Footer(state)}
       `;
-    
-
-    
-  }
-  
-render(state.Home)
    
+      var links = document.querySelectorAll(".navigation a");
+   
+      links[0].addEventListener("click", handleNavigation);
+      links[1].addEventListener("click", handleNavigation);
+      links[2].addEventListener("click", handleNavigation);
+      links[3].addEventListener("click", handleNavigation);
+
+     
+  }
+console.log(state.Home.links)
+render(state.Home)
+
 
 // var firstName = prompt("Hi there! What's your first name?")
 // var lastName = prompt("What's your last name?")

@@ -1,24 +1,22 @@
-function handleNavigation(event) {
-    // pull the component name from the text in the anchor tag
-    var component = event.target.textContent;
-    event.preventDefault();
-    // select a piece of the state tree by component
-    render(state[component]);
-  }
+import { lowerCase } from "lodash";
 function buildLinks(linkArray) {
     var i = 0;
     var links = "";
+    var link = "";
     while (i < linkArray.length) {
+        link = lowerCase(linkArray[i]);
       links += `
               <li>
-                  <a href='/${linkArray[i]}'>${linkArray[i]}</a>
+              <a href='/${link}'>${linkArray[i]}</a>
               </li>
           `;
+        
       i++;
     }
     return links;
   }
-  export default function Navigation(state) {
+
+export default function Navigation(state){
     return `
       <div class="navigation">
           <ul>
