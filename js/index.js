@@ -6,37 +6,31 @@ import Blog from "~/components/Blog"
 import * as states from "../store"
 import { lowerCase } from "lodash";
 import { capitalize } from "lodash";
+import Navigo from "navigo";
 let state = states
-console.log(lowerCase('John'))
-
-function handleNavigation(event) {
-    // pull the component name from the text in the anchor tag
-    var component = event.target.textContent;
-    event.preventDefault();
-    // select a piece of the state tree by component
-    render(state[capitalize(component)]);
-  }
+let router = new Navigo(window.location.origin)
 
 var root = document.querySelector("#root"); // this doesn't need to be queried every time we re-render
-function render(state) {
+function startApp(state) {
     root.innerHTML = `
         ${Navigation(state)}
         ${Header(state)}
         ${Content(state)}
         ${Footer(state)}
       `;
-   
-      var links = document.querySelectorAll(".navigation a");
-   
-      links[0].addEventListener("click", handleNavigation);
-      links[1].addEventListener("click", handleNavigation);
-      links[2].addEventListener("click", handleNavigation);
-      links[3].addEventListener("click", handleNavigation);
-
-     
+      router.updatePageLinks()
+    
   }
-console.log(state.Home.links)
-render(state.Home)
+  function handleRoute(params) {
+
+    startApp(state[capitalize(params.path)])
+   
+  }
+  router
+  .on(":path", handleRoute)
+  .on("/", () => startApp(state["Home"]))
+  .resolve();
+
 
 
 // var firstName = prompt("Hi there! What's your first name?")

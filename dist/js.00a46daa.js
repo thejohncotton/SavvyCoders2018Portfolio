@@ -19271,8 +19271,12 @@ function buildLinks(linkArray) {
   var link = "";
 
   while (i < linkArray.length) {
-    link = (0, _lodash.lowerCase)(linkArray[i]);
-    links += "\n              <li>\n              <a href='/".concat(link, "'>").concat(linkArray[i], "</a>\n              </li>\n          ");
+    if (linkArray[i] !== "home") {
+      link = linkArray[i];
+    } // what's the value of link here?
+
+
+    links += "\n              <li>\n                  <a href='/".concat((0, _lodash.lowerCase)(link), "' data-navigo>\n                      ").concat(linkArray[i], "\n                  </a>\n              </li>\n          ");
     i++;
   }
 
@@ -19293,7 +19297,7 @@ exports.default = Header;
 function Header(state) {
   return "\n<div class=\"container header\">\n<div id=\"greeting\"></div>\n<h1>".concat(state.title, "</h1>\n\n</div>\n");
 }
-},{}],"components/Pages/Contact.js":[function(require,module,exports) {
+},{}],"components/pages/Contact.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -19302,7 +19306,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var _default = "<div class=\"container header\">\n<h1>Contact:</h1>\n</div>\n<div class=\"container content-area\"id=\"contact-content\">\n    <!--\nThe action attribute defines where on the server the form data should be sent\nThe method attribute specifies the HTTP method (GET or POST)\n-->\n\n<form action=\"//formspree.io/john@johncotton.us\" method=\"POST\" class=\"form\">\n\n<input type=\"text\" name=\"firstname\" placeholder=\"First Name\" autofocus required><br>\n<input type=\"text\" name=\"lastname\" placeholder=\"Last Name\" required><br>\n<input type=\"email\" name=\"userEmail\" placeholder=\"email@example.com\"><br>\n\n<div class=\"radio-group\">What's this message about?<br>\n<input type=\"radio\" name=\"subject\" value=\"professional\" ><label for=\"professional\">I'd like to hire you!</label><br>\n<input type=\"radio\" name=\"subject\" value=\"personal\" ><label for=\"personal\">Personal message</label><br>\n<input type=\"radio\" name=\"subject\" value=\"other\" ><label for=\"other\">Don't know/something else</label><br>\n</div>\n\n<label for=\"marketing\">How did you hear about me?</label><br><br>\n<select name=\"marketing\">\n<optgroup label=\"Online\">\n    <option value=\"social\">Social Media (FB, Twitter, LinkedIn)</option>\n    <option value=\"github\">Online Portfolio (GitHub)</option>\n    <option value=\"search\">Search Engine</option>\n    <option value=\"email\">Email</option>\n</optgroup>\n<optgroup label=\"In-Person\">\n    <option value=\"networking\">We met at a networking event</option>\n    <option value=\"referral\">Personal referral</option>\n    <option value=\"random\">We met somewhere else</option>\n</optgroup>\n<option value=\"other\">Other</option>\n</select><br>\n\n<textarea name=\"user_message\" ></textarea><br>\n<input type=\"submit\" id=\"form-submit\">\n</form>\n</div>";
 exports.default = _default;
-},{}],"components/Pages/Home.js":[function(require,module,exports) {
+},{}],"components/pages/Home.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -19311,7 +19315,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var _default = "<div class=\"container content-area\">\n\n<img src=\"https://media.licdn.com/dms/image/C5603AQGFPv_1wQbm9Q/profile-displayphoto-shrink_200_200/0?e=1545264000&v=beta&t=YJahIpva-5JfTeHe2oqLyUzBvbwJ_uan_mQmZiVRXyU\" alt=\"John's Photo\" id=\"profile-photo\">\n<p class=\"icons\">\uD83C\uDFB5 \uD83D\uDCBB \uD83D\uDC15</p>\n</div>";
 exports.default = _default;
-},{}],"components/Pages/Projects.js":[function(require,module,exports) {
+},{}],"components/pages/Projects.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -19320,7 +19324,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var _default = "<div class=\"container header\" style=\"display:flex;\">\n<h1><i class=\"fas fa-envelope\"></i></h1>\n<h1><i class=\"fas fa-envelope\"></i></h1>\n<h1><i class=\"fas fa-envelope\"></i></h1>\n\n</div>\n\n<div class=\"container content-area\">\n    <ol>\n        <li>Class Showcase</li>\n        <li>Choose Your Own Adventure</li>\n        <li>Web Store Hack-A-Thon</li>\n    </ol>\n</div>\n";
 exports.default = _default;
-},{}],"components/Pages/Blog.js":[function(require,module,exports) {
+},{}],"components/pages/Blog.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -19329,7 +19333,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var _default = "<div class=\"container header\" id=\"blog-header\">\n<h1>John's Blog</h1>\n<h3>Just another blog</h3>\n</div>\n<div class=\"container content-area\" id=\"blog-content-area\">\n<div class=\"blog-post\">\n<h2>Hello World</h2>\n<p>It is almost a rite of passage for a developer on their journey of learning a language to create a <span class=\"highlighted\">Hello World</span>\nApplication of some kind. This application simply produces the greating 'hello world.' So far, I have created my 'hello world' app in the following languages:</p>\n<ul>\n    <li>C</li>\n    <li>C++</li>\n    <li>Javascript</li>\n    <li>Java</li>\n    <li>HTML</li>\n    <li>Ruby</li>\n    <li>Python</li>\n    <li>Elixir</li>\n    <li>Objective-C</li>\n    <li>Swift</li>\n</ul>\n<p>I look forward to adding more!</p>\n<hr>\n</div>\n<div class=\"blog-post\">\n<h2>Daily Minimum Reps</h2>\n<p>There is a lot of research into the human brain and how we humans learn through a pattern of stress and recovery.\n    While we learn programming it is important to keep this in mind. That brain pain you are experiencing <strong>is good for you!</strong>\n    Try to focus on the following every day:\n</p>\n<ul>\n    <li>Write new code.</li>\n    <li>Update old code.</li>\n    <li>Try new things!</li>\n    <li>Break things.</li>\n    <li>Fix them.</li>\n    <li>Use the command line over your typical file system.</li>\n    <li>PUSH your code.</li>\n</ul>\n<hr>\n</div>\n</div>";
 exports.default = _default;
-},{}],"components/Pages/index.js":[function(require,module,exports) {
+},{}],"components/pages/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -19369,7 +19373,7 @@ var _Projects = _interopRequireDefault(require("./Projects"));
 var _Blog = _interopRequireDefault(require("./Blog"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./Contact":"components/Pages/Contact.js","./Home":"components/Pages/Home.js","./Projects":"components/Pages/Projects.js","./Blog":"components/Pages/Blog.js"}],"components/Content.js":[function(require,module,exports) {
+},{"./Contact":"components/pages/Contact.js","./Home":"components/pages/Home.js","./Projects":"components/pages/Projects.js","./Blog":"components/pages/Blog.js"}],"components/Content.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -19377,16 +19381,14 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = _default;
 
-var pages = _interopRequireWildcard(require("./Pages"));
+var pages = _interopRequireWildcard(require("./pages"));
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
 function _default(state) {
-  if (state.content) {
-    return "".concat(state.content);
-  } else return "\n<div class=\"container content-area\">\n".concat(pages[state.body], "\n    </div>\n");
+  return "\n    <div class=\"container content-area\">\n    ".concat(pages[state.body], "\n     </div>\n ");
 }
-},{"./Pages":"components/Pages/index.js"}],"components/Footer.js":[function(require,module,exports) {
+},{"./pages":"components/pages/index.js"}],"components/Footer.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -19501,7 +19503,12 @@ var _Home = _interopRequireDefault(require("./Home"));
 var _Projects = _interopRequireDefault(require("./Projects"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./Blog":"store/Blog.js","./Contact":"store/Contact.js","./Home":"store/Home.js","./Projects":"store/Projects.js"}],"js/index.js":[function(require,module,exports) {
+},{"./Blog":"store/Blog.js","./Contact":"store/Contact.js","./Home":"store/Home.js","./Projects":"store/Projects.js"}],"node_modules/navigo/lib/navigo.min.js":[function(require,module,exports) {
+var define;
+!function(e,t){"object"==typeof exports&&"undefined"!=typeof module?module.exports=t():"function"==typeof define&&define.amd?define(t):e.Navigo=t()}(this,function(){"use strict";var e="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};function t(){return!("undefined"==typeof window||!window.history||!window.history.pushState)}function n(e,n,o){this.root=null,this._routes=[],this._useHash=n,this._hash=void 0===o?"#":o,this._paused=!1,this._destroyed=!1,this._lastRouteResolved=null,this._notFoundHandler=null,this._defaultHandler=null,this._usePushState=!n&&t(),this._onLocationChange=this._onLocationChange.bind(this),this._genericHooks=null,this._historyAPIUpdateMethod="pushState",e?this.root=n?e.replace(/\/$/,"/"+this._hash):e.replace(/\/$/,""):n&&(this.root=this._cLoc().split(this._hash)[0].replace(/\/$/,"/"+this._hash)),this._listen(),this.updatePageLinks()}function o(e){return e instanceof RegExp?e:e.replace(/\/+$/,"").replace(/^\/+/,"^/")}function i(e){return e.replace(/\/$/,"").split("/").length}function s(e,t){return i(t)-i(e)}function r(e,t){return function(e){return(arguments.length>1&&void 0!==arguments[1]?arguments[1]:[]).map(function(t){var i=function(e){var t=[];return{regexp:e instanceof RegExp?e:new RegExp(e.replace(n.PARAMETER_REGEXP,function(e,o,i){return t.push(i),n.REPLACE_VARIABLE_REGEXP}).replace(n.WILDCARD_REGEXP,n.REPLACE_WILDCARD)+n.FOLLOWED_BY_SLASH_REGEXP,n.MATCH_REGEXP_FLAGS),paramNames:t}}(o(t.route)),s=i.regexp,r=i.paramNames,a=e.replace(/^\/+/,"/").match(s),h=function(e,t){return 0===t.length?null:e?e.slice(1,e.length).reduce(function(e,n,o){return null===e&&(e={}),e[t[o]]=decodeURIComponent(n),e},null):null}(a,r);return!!a&&{match:a,route:t,params:h}}).filter(function(e){return e})}(e,t)[0]||!1}function a(e,t){var n=t.map(function(t){return""===t.route||"*"===t.route?e:e.split(new RegExp(t.route+"($|/)"))[0]}),i=o(e);return n.length>1?n.reduce(function(e,t){return e.length>t.length&&(e=t),e},n[0]):1===n.length?n[0]:i}function h(e,n,o){var i,s=function(e){return e.split(/\?(.*)?$/)[0]};return void 0===o&&(o="#"),t()&&!n?s(e).split(o)[0]:(i=e.split(o)).length>1?s(i[1]):s(i[0])}function u(t,n,o){if(n&&"object"===(void 0===n?"undefined":e(n))){if(n.before)return void n.before(function(){(!(arguments.length>0&&void 0!==arguments[0])||arguments[0])&&(t(),n.after&&n.after(o))},o);if(n.after)return t(),void(n.after&&n.after(o))}t()}return n.prototype={helpers:{match:r,root:a,clean:o,getOnlyURL:h},navigate:function(e,t){var n;return e=e||"",this._usePushState?(n=(n=(t?"":this._getRoot()+"/")+e.replace(/^\/+/,"/")).replace(/([^:])(\/{2,})/g,"$1/"),history[this._historyAPIUpdateMethod]({},"",n),this.resolve()):"undefined"!=typeof window&&(e=e.replace(new RegExp("^"+this._hash),""),window.location.href=window.location.href.replace(/#$/,"").replace(new RegExp(this._hash+".*$"),"")+this._hash+e),this},on:function(){for(var t=this,n=arguments.length,o=Array(n),i=0;i<n;i++)o[i]=arguments[i];if("function"==typeof o[0])this._defaultHandler={handler:o[0],hooks:o[1]};else if(o.length>=2)if("/"===o[0]){var r=o[1];"object"===e(o[1])&&(r=o[1].uses),this._defaultHandler={handler:r,hooks:o[2]}}else this._add(o[0],o[1],o[2]);else"object"===e(o[0])&&Object.keys(o[0]).sort(s).forEach(function(e){t.on(e,o[0][e])});return this},off:function(e){return null!==this._defaultHandler&&e===this._defaultHandler.handler?this._defaultHandler=null:null!==this._notFoundHandler&&e===this._notFoundHandler.handler&&(this._notFoundHandler=null),this._routes=this._routes.reduce(function(t,n){return n.handler!==e&&t.push(n),t},[]),this},notFound:function(e,t){return this._notFoundHandler={handler:e,hooks:t},this},resolve:function(e){var n,o,i=this,s=(e||this._cLoc()).replace(this._getRoot(),"");this._useHash&&(s=s.replace(new RegExp("^/"+this._hash),"/"));var a=function(e){return e.split(/\?(.*)?$/).slice(1).join("")}(e||this._cLoc()),l=h(s,this._useHash,this._hash);return!this._paused&&(this._lastRouteResolved&&l===this._lastRouteResolved.url&&a===this._lastRouteResolved.query?(this._lastRouteResolved.hooks&&this._lastRouteResolved.hooks.already&&this._lastRouteResolved.hooks.already(this._lastRouteResolved.params),!1):(o=r(l,this._routes))?(this._callLeave(),this._lastRouteResolved={url:l,query:a,hooks:o.route.hooks,params:o.params,name:o.route.name},n=o.route.handler,u(function(){u(function(){o.route.route instanceof RegExp?n.apply(void 0,o.match.slice(1,o.match.length)):n(o.params,a)},o.route.hooks,o.params,i._genericHooks)},this._genericHooks,o.params),o):this._defaultHandler&&(""===l||"/"===l||l===this._hash||function(e,n,o){if(t()&&!n)return!1;if(!e.match(o))return!1;var i=e.split(o);return i.length<2||""===i[1]}(l,this._useHash,this._hash))?(u(function(){u(function(){i._callLeave(),i._lastRouteResolved={url:l,query:a,hooks:i._defaultHandler.hooks},i._defaultHandler.handler(a)},i._defaultHandler.hooks)},this._genericHooks),!0):(this._notFoundHandler&&u(function(){u(function(){i._callLeave(),i._lastRouteResolved={url:l,query:a,hooks:i._notFoundHandler.hooks},i._notFoundHandler.handler(a)},i._notFoundHandler.hooks)},this._genericHooks),!1))},destroy:function(){this._routes=[],this._destroyed=!0,this._lastRouteResolved=null,this._genericHooks=null,clearTimeout(this._listeningInterval),"undefined"!=typeof window&&(window.removeEventListener("popstate",this._onLocationChange),window.removeEventListener("hashchange",this._onLocationChange))},updatePageLinks:function(){var e=this;"undefined"!=typeof document&&this._findLinks().forEach(function(t){t.hasListenerAttached||(t.addEventListener("click",function(n){if((n.ctrlKey||n.metaKey)&&"a"==n.target.tagName.toLowerCase())return!1;var o=e.getLinkPath(t);e._destroyed||(n.preventDefault(),e.navigate(o.replace(/\/+$/,"").replace(/^\/+/,"/")))}),t.hasListenerAttached=!0)})},generate:function(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},n=this._routes.reduce(function(n,o){var i;if(o.name===e)for(i in n=o.route,t)n=n.toString().replace(":"+i,t[i]);return n},"");return this._useHash?this._hash+n:n},link:function(e){return this._getRoot()+e},pause:function(){var e=!(arguments.length>0&&void 0!==arguments[0])||arguments[0];this._paused=e,this._historyAPIUpdateMethod=e?"replaceState":"pushState"},resume:function(){this.pause(!1)},historyAPIUpdateMethod:function(e){return void 0===e?this._historyAPIUpdateMethod:(this._historyAPIUpdateMethod=e,e)},disableIfAPINotAvailable:function(){t()||this.destroy()},lastRouteResolved:function(){return this._lastRouteResolved},getLinkPath:function(e){return e.getAttribute("href")},hooks:function(e){this._genericHooks=e},_add:function(t){var n=arguments.length>1&&void 0!==arguments[1]?arguments[1]:null,o=arguments.length>2&&void 0!==arguments[2]?arguments[2]:null;return"string"==typeof t&&(t=encodeURI(t)),this._routes.push("object"===(void 0===n?"undefined":e(n))?{route:t,handler:n.uses,name:n.as,hooks:o||n.hooks}:{route:t,handler:n,hooks:o}),this._add},_getRoot:function(){return null!==this.root?this.root:(this.root=a(this._cLoc().split("?")[0],this._routes),this.root)},_listen:function(){var e=this;if(this._usePushState)window.addEventListener("popstate",this._onLocationChange);else if("undefined"!=typeof window&&"onhashchange"in window)window.addEventListener("hashchange",this._onLocationChange);else{var t=this._cLoc(),n=void 0,o=void 0;(o=function(){n=e._cLoc(),t!==n&&(t=n,e.resolve()),e._listeningInterval=setTimeout(o,200)})()}},_cLoc:function(){return"undefined"!=typeof window?void 0!==window.__NAVIGO_WINDOW_LOCATION_MOCK__?window.__NAVIGO_WINDOW_LOCATION_MOCK__:o(window.location.href):""},_findLinks:function(){return[].slice.call(document.querySelectorAll("[data-navigo]"))},_onLocationChange:function(){this.resolve()},_callLeave:function(){var e=this._lastRouteResolved;e&&e.hooks&&e.hooks.leave&&e.hooks.leave(e.params)}},n.PARAMETER_REGEXP=/([:*])(\w+)/g,n.WILDCARD_REGEXP=/\*/g,n.REPLACE_VARIABLE_REGEXP="([^/]+)",n.REPLACE_WILDCARD="(?:.*)",n.FOLLOWED_BY_SLASH_REGEXP="(?:/$|$)",n.MATCH_REGEXP_FLAGS="",n});
+
+
+},{}],"js/index.js":[function(require,module,exports) {
 "use strict";
 
 var _Navigation = _interopRequireDefault(require("~/components/Navigation"));
@@ -19518,34 +19525,28 @@ var states = _interopRequireWildcard(require("../store"));
 
 var _lodash = require("lodash");
 
+var _navigo = _interopRequireDefault(require("navigo"));
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var state = states;
-console.log((0, _lodash.lowerCase)('John'));
-
-function handleNavigation(event) {
-  // pull the component name from the text in the anchor tag
-  var component = event.target.textContent;
-  event.preventDefault(); // select a piece of the state tree by component
-
-  render(state[(0, _lodash.capitalize)(component)]);
-}
-
+var router = new _navigo.default(window.location.origin);
 var root = document.querySelector("#root"); // this doesn't need to be queried every time we re-render
 
-function render(state) {
+function startApp(state) {
   root.innerHTML = "\n        ".concat((0, _Navigation.default)(state), "\n        ").concat((0, _Header.default)(state), "\n        ").concat((0, _Content.default)(state), "\n        ").concat((0, _Footer.default)(state), "\n      ");
-  var links = document.querySelectorAll(".navigation a");
-  links[0].addEventListener("click", handleNavigation);
-  links[1].addEventListener("click", handleNavigation);
-  links[2].addEventListener("click", handleNavigation);
-  links[3].addEventListener("click", handleNavigation);
+  router.updatePageLinks();
 }
 
-console.log(state.Home.links);
-render(state.Home); // var firstName = prompt("Hi there! What's your first name?")
+function handleRoute(params) {
+  startApp(state[(0, _lodash.capitalize)(params.path)]);
+}
+
+router.on(":path", handleRoute).on("/", function () {
+  return startApp(state["Home"]);
+}).resolve(); // var firstName = prompt("Hi there! What's your first name?")
 // var lastName = prompt("What's your last name?")
 // var output = document.querySelector("#greeting")
 //         function checkName(){
@@ -19558,7 +19559,7 @@ render(state.Home); // var firstName = prompt("Hi there! What's your first name?
 //             }
 //         } 
 //         checkName()
-},{"~/components/Navigation":"components/Navigation.js","~/components/Header":"components/Header.js","~/components/Content":"components/Content.js","~/components/Footer":"components/Footer.js","~/components/Blog":"components/Blog.js","../store":"store/index.js","lodash":"node_modules/lodash/lodash.js"}],"node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"~/components/Navigation":"components/Navigation.js","~/components/Header":"components/Header.js","~/components/Content":"components/Content.js","~/components/Footer":"components/Footer.js","~/components/Blog":"components/Blog.js","../store":"store/index.js","lodash":"node_modules/lodash/lodash.js","navigo":"node_modules/navigo/lib/navigo.min.js"}],"node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -19585,7 +19586,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58800" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52744" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
