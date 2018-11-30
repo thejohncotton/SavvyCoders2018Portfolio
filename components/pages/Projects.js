@@ -1,15 +1,14 @@
-export default `<div class="container header" style="display:flex;">
-<h1><i class="fas fa-envelope"></i></h1>
-<h1><i class="fas fa-envelope"></i></h1>
-<h1><i class="fas fa-envelope"></i></h1>
-
-</div>
-
-<div class="container content-area">
+import cyoa from '../../projects/cyoa/cyoa'
+export default function() {
+    
+    return `
+    <div class="container content-area">
     <ol>
-        <li>Class Showcase</li>
-        <li>Choose Your Own Adventure</li>
-        <li>Web Store Hack-A-Thon</li>
+        <li><button>Class Showcase</button></li>
+        <li><button id="cyoaStart" onClick="${cyoa()}">Choose Your Own Adventure</button></li>
+        <li><button>Web Store Hack-A-Thon</button></li>
     </ol>
 </div>
+
 `
+}

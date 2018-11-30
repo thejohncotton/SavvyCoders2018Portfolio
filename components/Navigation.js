@@ -1,27 +1,24 @@
 import { lowerCase } from "lodash";
 function buildLinks(linkArray) {
-    var i = 0;
     var links = "";
-    var link = "";  
-    while (i < linkArray.length) {
-      if (linkArray[i] !== "home") {
-        link = linkArray[i];
-      }
-// what's the value of link here?
-      links += `
-              <li>
-                  <a href='/${lowerCase(link)}' data-navigo>
-                      ${linkArray[i]}
-                  </a>
-              </li>
-          `;
+    var route = "";  
+    linkArray.forEach(link => {
+        if (route !== "Home") {
+          route = lowerCase(link);
+        }
+        links += `
+                <li>
+                    <a href='/${route}' data-navigo>
+                        ${link}
+                    </a>
+                </li>
+            `;
+      });
 
-      i++;
-    }
-    return links;
+      return links;
   }
 
-export default function Navigation(state){
+export default function(state){
     return `
       <div class="navigation">
           <ul>

@@ -1,4 +1,5 @@
-export default `<div class="container header">
+export default function() {
+    return `<div class="container header">
 <h1>Contact:</h1>
 </div>
 <div class="container content-area"id="contact-content">
@@ -39,3 +40,4 @@ The method attribute specifies the HTTP method (GET or POST)
 <input type="submit" id="form-submit">
 </form>
 </div>`
+}

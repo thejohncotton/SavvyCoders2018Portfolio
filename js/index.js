@@ -2,13 +2,24 @@ import Navigation from "~/components/Navigation"
 import Header from "~/components/Header"
 import Content from "~/components/Content"
 import Footer from "~/components/Footer"
-import Blog from "~/components/Blog"
-import * as states from "../store"
-import { lowerCase } from "lodash";
+import * as state from "../store"
 import { capitalize } from "lodash";
 import Navigo from "navigo";
-let state = states
+import axios from 'axios';
+
+// let state = states
 let router = new Navigo(window.location.origin)
+
+ 
+
+axios.get("https://jsonplaceholder.typicode.com/posts").then(response => {
+  var params = router.lastRouteResolved().params;
+response.data.forEach(post => state.Blog.posts.push(post));
+    if (params) {
+  // required for the home page
+    handleRoute(params);
+  }
+});
 
 var root = document.querySelector("#root"); // this doesn't need to be queried every time we re-render
 function startApp(state) {
@@ -30,7 +41,6 @@ function startApp(state) {
   .on(":path", handleRoute)
   .on("/", () => startApp(state["Home"]))
   .resolve();
-
 
 
 // var firstName = prompt("Hi there! What's your first name?")
